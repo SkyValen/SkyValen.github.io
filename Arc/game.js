@@ -1,5 +1,7 @@
 let game = {
     ctx: null,
+    platform: null,
+    ball: null,
     sprites: {
         background: null,
         ball: null,
@@ -40,6 +42,19 @@ let game = {
         });
     }
 };
+
+game.ball = {
+    x: 320,
+    y: 280,
+    width: 20,
+    height: 20
+};
+
+game.platform = {
+    x: 280,
+    y: 300
+}
+
 window.addEventListener("load", () => {
     game.start();
 });
