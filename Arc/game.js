@@ -1,6 +1,7 @@
 const KEYS = {
     LEFT: 37,
-    RIGHT: 39
+    RIGHT: 39,
+    SPACE: 32
 };
 
 let game = {
@@ -22,7 +23,9 @@ let game = {
     },
     setEvents() {
         window.addEventListener("keydown", e => {
-            if (e.keyCode === KEYS.LEFT || e.keyCode === KEYS.RIGHT) {
+            if (e.keyCode === KEYS.SPACE) {
+                this.platform.fire();
+            } else if (e.keyCode === KEYS.LEFT || e.keyCode === KEYS.RIGHT) {
                 this.platform.start(e.keyCode);
             }
         });
@@ -58,6 +61,7 @@ let game = {
     },
     update() {
         this.platform.move();
+        this.ball.move();
     },
     run() {
         window.requestAnimationFrame(() => {
@@ -68,7 +72,7 @@ let game = {
     },
     render() {
         this.ctx.drawImage(this.sprites.background, 0, 0);
-        this.ctx.drawImage(this.sprites.ball, 0, 0, this.ball.width, this.ball.height, 
+        this.ctx.drawImage(this.sprites.ball, 0, 0, this.ball.width, this.ball.height,
             this.ball.x, this.ball.y, this.ball.width, this.ball.height);
         this.ctx.drawImage(this.sprites.platform, this.platform.x, this.platform.y);
         this.renderBlocks();
@@ -88,10 +92,20 @@ let game = {
 };
 
 game.ball = {
+    dy: 0,
+    velocity: 3,
     x: 320,
     y: 280,
     width: 20,
-    height: 20
+    height: 20,
+    start() {
+        this.dy = -this.velocity;
+    },
+    move() {
+        if (this.dy) {
+            this.y += this.dy;
+        }
+    }
 };
 
 game.platform = {
@@ -99,20 +113,29 @@ game.platform = {
     dx: 0,
     x: 280,
     y: 300,
+    ball: game.ball,
+    fire() {
+        if (this.ball) {
+            this.ball.start();
+            this.ball = null;
+        }
+    },
     start(direction) {
         if (direction === KEYS.LEFT) {
-            this.dx =  -this.velocity;
+            this.dx = -this.velocity;
         } else if (direction === KEYS.RIGHT) {
             this.dx = this.velocity;
         }
     },
-    stop () {
+    stop() {
         this.dx = 0;
     },
     move() {
         if (this.dx) {
             this.x += this.dx;
-            game.ball.x += this.dx;
+            if (this.ball) {
+                game.ball.x += this.dx;
+            }
         }
     }
 };
