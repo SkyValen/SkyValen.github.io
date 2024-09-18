@@ -184,7 +184,7 @@ game.ball = {
     },
     bumpPlatform(platform) {
         if (platform.dx) {
-            this.x = platform.dx;
+            this.x += platform.dx;
         }
 
         if (this.dy > 0) {
@@ -236,7 +236,7 @@ game.platform = {
     collideWorldBounds() {
         let x = this.x + this.dx;
         let platformLeft = x;
-        let platformRight = platformLeft + wthis.width;
+        let platformRight = platformLeft + this.width;
         let worldLeft = 0;
         let worldRight = game.width;
 
