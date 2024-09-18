@@ -65,7 +65,7 @@ let game = {
     preloadAudio(onResourceLoad) {
         for (let key in this.sounds) {
             this.sounds[key] = new Audio("sounds/" + key + ".mp3");
-            this.sprites[key].addEventListener("canplaythrough", onResourceLoad, {once: true});
+            this.sounds[key].addEventListener("canplaythrough", onResourceLoad, {once: true});
         }
     },
     create() {
@@ -201,15 +201,15 @@ game.ball = {
         if (ballLeft < worldLeft) {
             this.x = 0;
             this.dx = this.velocity;
-            this.sounds.bump.play();
+            game.sounds.bump.play();
         } else if (ballRight > worldRight) {
             this.x = worldRight - this.width;
             this.dx = -this.velocity;
-            this.sounds.bump.play();
+            game.sounds.bump.play();
         } else if (ballTop < worldTop) {
             this.y = 0;
             this.dy = this.velocity;
-            this.sounds.bump.play();
+            game.sounds.bump.play();
         } else if (ballBottom > worldBottom) {
             game.running = false;
             alert('game over');
