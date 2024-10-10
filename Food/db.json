@@ -1,28 +1,57 @@
 {
-    "menu": [
-        {
-            "img": "img/tabs/vegy.jpg",
-            "altimg": "vegy",
-            "Title": "Меню 'Фитнес'",
-            "descr": "Меню 'Фитнес' - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
-            "price": 9
-        },
-        {
-            "img": "img/tabs/post.jpg",
-            "altimg": "post",
-            "Title": "Меню 'Постное'",
-            "descr": "Меню 'Постное' - это тщательный подбор ингриедиентов: полное отсутствие продукт животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счёт тофу и импортных вегетарианских стейков.",
-            "price": 14
-        },
-        {
-            "img": "img/tabs/elite.jpg",
-            "altimg": "elite",
-            "Title": "Меню 'Премиум'",
-            "descr": "В меню 'Премиум' мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанноение меню без похода в ресторан!",
-            "price": 21
-        }
-    ],
-    "requests": [
-        
-    ]
+  "menu": [
+    {
+      "img": "img/tabs/vegy.jpg",
+      "altimg": "vegy",
+      "title": "Menüü 'Fitness'",
+      "descr": "Menüü 'Fitness' - see on uus lähenemine toiduvalmistamisele: rohkem värskeid köögivilju ja puuvilju. Inimestele, kes on huvitatud spordist; aktiivne ja tervislik. See on täiesti uus toode, millel on optimaalne hind ja kõrge kvaliteet!",
+      "price": 9
+    },
+    {
+      "img": "img/tabs/post.jpg",
+      "altimg": "post",
+      "title": "Menüü 'Lahja'",
+      "descr": "Meie spetsiaalne 'Lahja menüü' - on koostisosade hoolikas valik: loomsete saaduste täielik puudumine. Täielik harmoonia iseenda ja loodusega igas elemendis! Kõik saab olema om!",
+      "price": 14
+    },
+    {
+      "img": "img/tabs/elite.jpg",
+      "altimg": "elite",
+      "title": "Menüü 'Premium'",
+      "descr": "Menüü 'Premium' - me kasutame mitte ainult ilusat pakendikujundust, vaid ka roogade kvaliteetset täitmist. Punane kala, mereannid, puuviljad - restoranimenüü ilma restorani minemata!",
+      "price": 21
+    }
+  ],
+  "requests": [
+    {
+      "name": "фав",
+      "phone": "1421-1242",
+      "aeg": "пцма2453",
+      "id": 1
+    },
+    {
+      "name": "ываи",
+      "phone": "1243-5634",
+      "aeg": "пуп53",
+      "id": 2
+    },
+    {
+      "name": "впрв",
+      "phone": "3265-3256",
+      "aeg": "кпур456",
+      "id": 3
+    },
+    {
+      "name": "пваур",
+      "phone": "3256-8425",
+      "aeg": "урп32653",
+      "id": 4
+    },
+    {
+      "name": "agd",
+      "phone": "1234-1241",
+      "aeg": " c4235ct6y5b",
+      "id": 5
+    }
+  ]
 }
